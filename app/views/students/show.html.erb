@@ -1,0 +1,30 @@
+<%= image_tag @student.image.url(:large) %>
+<%= video_tag @student.video.url(:medium), controls: true, style: "max-width: 100%;" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+ 
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+  <strong>Phone_number:</strong>
+  <%= @student.phone_number %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @student.address %>
+</p>
+
+<p>
+  <strong>Classname_id:</strong>
+  <%= @student.classname_id %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student), class:'label label-danger' %>
+<%= link_to 'Back', students_path, class:'label label-default' %>

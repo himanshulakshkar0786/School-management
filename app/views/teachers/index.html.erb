@@ -1,0 +1,42 @@
+<%= search_form_for @search do |f| %>
+ <%= f.condition_fields do |c| %>
+  <div>
+ 	<%= c.attribute_fields do |a| %>
+      <%= a.attribute_select %>
+    <% end %>
+    <%= c.predicate_select %>
+    <%= c.value_fields do |v| %>
+      <%= v.text_field :value %>
+    <% end %>
+	<%= f.submit "Search" %>
+  </div>
+ <% end %>
+<% end %>
+
+<h1 style = "color:red;">Listing Teachers</h1>
+<h4><%= link_to 'New Teacher', new_teacher_path, class:'label label-default' %></h4>
+<table class = "table table-hover">
+	<tr class = "info">
+		<th>Name</th>
+		<th>Email</th>
+		<th>Phone Number</th>
+		<th>Subject</th>
+		<th>Classname Id</th>
+	</tr>
+
+	<% @teachers.each do |teacher| %>
+		<tr class = "warning">
+			<td><%= teacher.name %></td>
+			<td><%= teacher.email %></td>
+			<td><%= teacher.phone_number %></td>
+			<td><%= teacher.subject %></td>
+			<td><%= teacher.classname_id %></td>
+			<td><%= link_to "Show", teacher_path(teacher), class:'label label-primary' %></td>
+			<td><%= link_to 'Edit', edit_teacher_path(teacher), class:'label label-danger' %></td>
+      		<td><%= link_to 'Destroy', teacher_path(teacher),
+              		method: :delete,
+              		data: { confirm: 'Are you sure?' }, class:'label label-warning' %></td>
+		</tr>
+	 <% end %>
+</table>
+<%= link_to 'Back', controller: :home , class:'label label-default' %>

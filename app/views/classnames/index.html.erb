@@ -1,0 +1,20 @@
+<h1 style = "color:red;">Listing Classnames</h1>
+<h4><%= link_to "New Classname", new_classname_path, class:'label label-default' %></h4>
+<table>
+	<tr>
+		<th>Name</th>
+		<th width = "20px"></th>
+	</tr>
+
+	<% @classnames.each do |classname| %>
+		<tr>
+			<td><%= classname.name %></td>
+			<td><%= link_to "Show", classname_path(classname), class:'label label-primary' %></td>
+			<td><%= link_to 'Edit', edit_classname_path(classname), class:'label label-danger' %></td>
+      		<td><%= link_to 'Destroy', classname_path(classname),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, class:'label label-warning' %></td>
+		</tr>
+	<% end %>
+</table>
+<%= link_to 'Back', controller: :home %>

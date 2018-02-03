@@ -25,11 +25,8 @@
   		<% flash.each do |name, msg| %>
   			<%= content_tag :div, msg, id: "flash_#{name}" %>
   		<% end %>
-    <div class="row">
-      <div class="col-sm-9">
         <%= yield %>
-      </div>
-      <div class="col-sm-3 jumbotron">
+     <!--  <div class="col-sm-3 jumbotron">
       <h2 style = "color:red;">My Profile</h2>
       <img src="/system/students/images/000/000/005/large/Himanshu.jpg?1507910764" 
       alt="Himanshu", height = "320", width = "240">
@@ -39,8 +36,7 @@
       <h4><b>Address: </b>Phagi,Jaipur</h4>
       <h4><b>Contact: </b>+918561830267</h4>
       <h4><b>Email: </b>Himanshulakshkar0786@gmail.com</h4>
-      </div>
-    </div>
+      </div> -->
     </div>
   </body>
 </html>
